@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ViewCode Component Test</title>
+  <link rel="stylesheet" href="../css/prism.css">
+  <link rel="stylesheet" href="css/ViewCode.css">
+  <script src="../js/prism.js" defer></script>
+  <script src="js/ViewCode.js" defer></script>
+  <style>
+    :root {
+      --light: #f0f0f0;
+      --dark:  #333;
+    }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      padding: 2rem;
+      max-width: 60rem;
+    }
+    p { max-width: 50rem; line-height: 1.5; margin: 0.75rem 0; }
+    h2, h3 { margin-top: 1.5rem; }
+  </style>
+</head>
+<body>
+
+  <h2>ViewCode Component Test</h2>
+
+  <p>
+    The component below floats right. Click the code panel to widen it;
+    click the title bar to narrow it.
+  </p>
+
+  <view-code trim normalize-indent style="float:right; font-size:1.0rem; --title-font-size:1.2rem;" height="8rem">
+    Figure 1. HTML fragment
+    <template slot="code">
+<div class="example">
+  <p>Hello, World!</p>
+  <ul>
+    <li>Item one</li>
+    <li>Item two</li>
+  </ul>
+</div>
+    </template>
+  </view-code>
+
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+  <p>
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+    culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+
+  <div style="clear:both; margin-top: 2rem;"></div>
+  <h3>Prism Highlighting</h3>
+
+  <view-code highlight="prism" language="javascript" trim normalize-indent>
+    Figure 2. JavaScript module pattern
+    <pre slot="code"><code class="language-javascript">
+const counter = (() => {
+  let _n = 0;
+  return {
+    inc: () => ++_n,
+    dec: () => --_n,
+    val: () => _n,
+  };
+})();
+
+console.log(counter.inc());  // 1
+console.log(counter.inc());  // 2
+console.log(counter.dec());  // 1
+    </code></pre>
+  </view-code>
+
+  <div style="height: 1.5rem;"></div>
+
+  <view-code highlight="prism" language="css" width="40rem" trim normalize-indent>
+    Figure 3. CSS snippet
+    <pre slot="code"><code class="language-css">
+.view {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #333;
+  box-shadow: 5px 5px 5px #999;
+  box-sizing: border-box;
+}
+    </code></pre>
+  </view-code>
+
+  <div style="height: 3rem;"></div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+/* host-page placement helpers for <view-code> */
+view-code {
+  display: inline-block;
+  margin: 0.5rem;
+}
