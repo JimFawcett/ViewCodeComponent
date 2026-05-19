@@ -34,6 +34,8 @@ The containing page must define `--light` and `--dark` CSS custom properties for
 
 ## Usage
 
+![ViewCodeComponent](pictures/ViewCodeComponent.png)
+
 ### Plain text
 
 Wrap content in a `<template slot="code">` to display it as literal text:
